@@ -21,26 +21,25 @@ You will be graded on the level of detail in each ticket, the clarity of the exe
 
 - Title: "Add custom agent ID field to `Facilities` database"
 - Description: "We need to add a new field to the database to store the custom agent ID for each agent in a facility. This field should be optional and allow facilities to specify their own unique ID for each agent."
-Acceptance criteria:
+- Acceptance criteria:
 The database has a new custom_agent_id field that can be used to store the custom agent ID for each agent.
 The custom_agent_id field is optional and can be left blank if no custom ID has been specified. (Assumption)
 The custom_agent_id field is properly indexed and optimized for fast queries.
-- Time/effort estimate: 1 day
 - Implementation details:
 Use a database migration tool to add the custom_agent_id field to the agents table.
 Set the custom_agent_id field to be nullable and allow it to accept any alphanumeric string up to 255 characters in length. (Assumption)
 Create a unique index on the custom_agent_id field to ensure that no two agents have the same custom ID.
+- Time/effort estimate: 1 day
 
 
 ### Ticket 2:
 
 - Title: "Update report generation to use custom agent ID"
 - Description: "We need to update the report generation logic to use the custom agent ID if it is available, and fall back to the internal database ID if no custom ID has been specified. This will ensure that reports generated for facilities use the correct ID for each agent."
-- Time/effort estimate: 1 day
 - Acceptance criteria:
 The report generation logic correctly uses the custom agent ID if it is available, and falls back to the internal database ID if no custom ID has been specified.
 The report templates are updated to display the correct ID for each agent, either the custom ID or the internal database ID as needed.
-
+- Time/effort estimate: 1 day
 ### Ticket 3:
 
 - Title: "Add custom agent ID field to UI"
@@ -50,7 +49,7 @@ The user interface has a new Custom ID field that can be used to enter the custo
 The Custom ID field is optional and can be left blank if no custom ID has been specified.
 The Custom ID field is properly validated to ensure that it only accepts alphanumeric strings up to 255 characters in length.
 Changes to the Custom ID field are properly saved to the database.
-- Time/effort estimate: 1 day
 - Implementation details:
 Add a new Custom ID field to the form preferably used by facilities admin in the user interface.
 Use JavaScript validation to ensure that the Custom ID field only accepts alphanumeric strings .
+- Time/effort estimate: 1 day
